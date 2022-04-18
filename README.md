@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 [Florence Kotohoyoh](https://github.com/Flokots)
 
 ## Demo 
-(GitHub Search)[https://flokots.github.io/github-search]
+[GitHub Search](https://flokots.github.io/github-search)
 
 ### Technologies and Dependencies Used
 * HTML
