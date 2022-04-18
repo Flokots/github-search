@@ -48,6 +48,6 @@ Should you notice any bug or want to add a feature, contributions are highly wel
 florencekotohoyoh@gmail.com
 
 ### License
-[MIT](https://choosealicense/licenses/MIT)
+[MIT](https://choosealicense.com/licenses/mit/)
 Copyright (c) 2022
 
