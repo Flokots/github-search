@@ -12,10 +12,12 @@ export class SearchUserService {
   user!: User;
   repository!: Repository;
   reposArray: Repository[] = [];
+  searchName!: string;
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");
     this.repository = new Repository('', '', '', new Date(), new Date(), 0, '')
+    this.searchName = "Flokots";
 
   }
 
@@ -32,7 +34,7 @@ export class SearchUserService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/Flokots?access_token" + environment.apiKey).toPromise().then((response: any) => {
+      this.http.get<ApiResponse>("https://api.github.com/users/" + this.searchName  +"?access_token" + environment.apiKey).toPromise().then((response: any) => {
         this.user.name = response.name
         this.user.login = response.login
         this.user.avatar_url = response.avatar_url
@@ -51,7 +53,7 @@ export class SearchUserService {
   }
 
   reposRequest() {
-    this.http.get<any>("https://api.github.com/users/Flokots/repos?access_token" + environment.apiKey)
+    this.http.get<any>("https://api.github.com/users/" + this.searchName  + "/repos?access_token" + environment.apiKey)
     .subscribe(
      ( data:[]) => {
         let responseArray = data;
