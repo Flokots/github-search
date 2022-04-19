@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Repository } from 'src/app/models/repository/repository';
 import { User } from 'src/app/models/user';
 import { SearchUserService } from 'src/app/services/search-user.service';
@@ -10,11 +11,15 @@ import { SearchUserService } from 'src/app/services/search-user.service';
 })
 export class LandingPageComponent implements OnInit {
 
+  goToUrl() {
+    this.router.navigate(["/search-form"])
+  }
   user!: User;
   reposDetails!: Repository[]; 
   repository!: Repository;
   searchUserService!: SearchUserService;
-  constructor(searchUserService: SearchUserService) { 
+
+  constructor(searchUserService: SearchUserService, private router: Router) { 
    this.searchUserService = searchUserService;
   }
 
@@ -25,7 +30,7 @@ export class LandingPageComponent implements OnInit {
     this.reposDetails = this.searchUserService.reposArray;
     console.log(this.user)
     console.log("above are user details")
-    // this.reposArray =
+
     console.log(this.reposDetails)
     console.log("above are repo details")
     
