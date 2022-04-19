@@ -1,7 +1,8 @@
 h1 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-align: center;
 }
+
 .lp_button {
   margin: 2em;
   padding: 1em;
@@ -9,12 +10,32 @@ h1 {
   width: 100%;
   margin-top: 0.5em;
 }
+
 img {
   border-radius: 50%;
+  width: 50%;
+  height: 75%;
+  object-fit: contain;
+
 }
+
+.avatar {
+  text-align: center;
+}
+
 .repo {
   background-color: #062726;
   color: #E2CFEA;
   padding: 2em;
   margin: 1em;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.repo-details {
+  margin-right: auto;
+  margin-left: auto;
+  width: 16em;
+  margin-top: 2em;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
 }

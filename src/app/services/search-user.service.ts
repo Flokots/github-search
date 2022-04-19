@@ -11,9 +11,7 @@ export class SearchUserService {
 
   user!: User;
   repository!: Repository;
-  reposArray!: Repository[];
-  newUserData: any = [];
-
+  reposArray: Repository[] = [];
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");
@@ -53,17 +51,21 @@ export class SearchUserService {
   }
 
   reposRequest() {
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<any>("https://api.github.com/users/Flokots/repos?access_token" + environment.apiKey)
-        .toPromise().then(
-          response => {
-            console.log(response)
-            console.log("response with repos array above")
-            resolve(response)
-          }, error => {
-            reject(error)
-          })
-    })
-    return promise
-  }
+    this.http.get<any>("https://api.github.com/users/Flokots/repos?access_token" + environment.apiKey)
+    .subscribe(
+     ( data:[]) => {
+        let responseArray = data;
+        responseArray.forEach((e: any )=> {
+          this.reposArray.push(new Repository(e.name, e.html_url, e.description, e.created_at, e.updated_at, e.forks_count, e.clone_url))
+          
+        })
+        console.log(this.reposArray)
+        // return this.reposArray;
+        this.repository = this.reposArray[1];
+        console.log(this.repository)
+      }
+      )
+      }
 }
+
+

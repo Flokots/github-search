@@ -11,17 +11,22 @@ import { SearchUserService } from 'src/app/services/search-user.service';
 export class LandingPageComponent implements OnInit {
 
   user!: User;
-  constructor(private searchUserService: SearchUserService) { 
-   
+  reposDetails!: Repository[]; 
+  repository!: Repository;
+  searchUserService!: SearchUserService;
+  constructor(searchUserService: SearchUserService) { 
+   this.searchUserService = searchUserService;
   }
 
   ngOnInit() {
     this.searchUserService.userRequest();
     this.searchUserService.reposRequest();
     this.user = this.searchUserService.user;
+    this.reposDetails = this.searchUserService.reposArray;
     console.log(this.user)
     console.log("above are user details")
-    console.log(this.searchUserService.reposArray)
+    // this.reposArray =
+    console.log(this.reposDetails)
     console.log("above are repo details")
     
   }
