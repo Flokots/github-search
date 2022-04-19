@@ -12,12 +12,11 @@ export class SearchUserService {
   user!: User;
   repository!: Repository;
   reposArray: Repository[] = [];
-  // searchName!: string;
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");
     this.repository = new Repository('', '', '', new Date(), new Date(), 0, '')
-    // this.searchName = "Flokots";
+   
 
   }
 
@@ -62,7 +61,6 @@ export class SearchUserService {
           
         })
         console.log(this.reposArray)
-        // return this.reposArray;
         this.repository = this.reposArray[1];
         console.log(this.repository)
       }

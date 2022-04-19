@@ -1,19 +1,29 @@
 <div class="container">
-  <div>
-    <h4>{{user.login}}</h4>
-    <hr>
-  </div>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="avatar"><img src="{{user.avatar_url}}"></div>
+      <div class="repo-details">
+        <h3>{{user.login}}</h3>
+        <hr>
+        <p>Created on: {{user.created_at | date}}</p>
+        <p>Last updated on : {{user.updated_at | date}}</p>
+        <p>Followers: {{user.followers}}</p>
+        <p><a href="{{user.html_url}}" target="_blank">Github User Profile</a></p>
+        <p>Repositories: {{user.public_repos}}</p>
+      </div>
     </div>
     <div class="col-md-6">
-      <p>{{user.name}}</p>
-      <p>Created on: {{user.created_at | date}}</p>
-      <p>Last updated on : {{user.updated_at | date}}</p>
-      <p>Followers: {{user.followers}}</p>
-      <p><a href="{{user.html_url}}" target="_blank">View Github User Profile</a></p>
-      <p>Repositories: {{user.public_repos}}</p>
+      <div>
+        <h4 class="text-center">Repositories</h4>
+        <div class="repo" *ngFor="let reposDetail of reposDetails; let i = index">
+          <p class="text-center"><b>{{reposDetail.name}}</b></p>
+          <p>Description: {{reposDetail.description}}</p>
+          <p>Clone Url: {{reposDetail.clone_url}}</p>
+          <p>Forks: {{reposDetail.forks_count}}</p>
+          <p>Created On: {{reposDetail.created_at | date}}</p>
+          <p>Last Updated On: {{reposDetail.updated_at | date}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
