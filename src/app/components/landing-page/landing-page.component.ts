@@ -18,14 +18,16 @@ export class LandingPageComponent implements OnInit {
   reposDetails!: Repository[]; 
   repository!: Repository;
   searchUserService!: SearchUserService;
+  searchName!: string;
 
   constructor(searchUserService: SearchUserService, private router: Router) { 
    this.searchUserService = searchUserService;
+   this.searchName = "Flokots";
   }
 
   ngOnInit() {
-    this.searchUserService.userRequest();
-    this.searchUserService.reposRequest();
+    this.searchUserService.userRequest(this.searchName);
+    this.searchUserService.reposRequest(this.searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
     console.log(this.user)

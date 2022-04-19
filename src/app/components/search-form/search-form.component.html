@@ -4,7 +4,7 @@
     <div class=" form-group mb-3">
       <label for="username" class="form-label">User Name Or Repository</label>
       <input type="text" class="form-control" id="username" [(ngModel)]="searchName" #username="ngModel" name="username"
-        aria-describedby="username" required>
+        aria-describedby="username" required />
       <div id="username" class="form-text">Enter The Github Username or Repository name.</div>
       <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
         <p>Username or repository name is required</p>
