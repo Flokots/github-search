@@ -6,5 +6,6 @@ export class Repository {
     public created_at: Date,
     public updated_at: Date,
     public forks_count: number,
+    public clone_url: string,
   ){}
 }

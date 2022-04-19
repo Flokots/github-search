@@ -1,0 +1,19 @@
+<div class="container">
+  <div>
+    <h4>{{user.login}}</h4>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="avatar"><img src="{{user.avatar_url}}"></div>
+    </div>
+    <div class="col-md-6">
+      <p>{{user.name}}</p>
+      <p>Created on: {{user.created_at | date}}</p>
+      <p>Last updated on : {{user.updated_at | date}}</p>
+      <p>Followers: {{user.followers}}</p>
+      <p><a href="{{user.html_url}}" target="_blank">View Github User Profile</a></p>
+      <p>Repositories: {{user.public_repos}}</p>
+    </div>
+  </div>
+</div>

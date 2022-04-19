@@ -12,3 +12,9 @@ h1 {
 img {
   border-radius: 50%;
 }
+.repo {
+  background-color: #062726;
+  color: #E2CFEA;
+  padding: 2em;
+  margin: 1em;
+}

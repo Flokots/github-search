@@ -8,13 +8,15 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { DisplayUserRepoComponent } from './components/display-user-repo/display-user-repo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     SearchFormComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DisplayUserRepoComponent
   ],
   imports: [
     BrowserModule,

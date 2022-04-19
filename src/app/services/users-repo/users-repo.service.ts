@@ -13,9 +13,10 @@ export class UsersRepoService {
   repository!: Repository;
 
 
+
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");
-    this.repository = new Repository("", "", "", new Date(), new Date(), 0)
+    this.repository = new Repository("", "", "", new Date(), new Date(), 0, "")
   }
   githubUserRequest(userName: string) {
     interface ApiResponse {
@@ -31,7 +32,7 @@ export class UsersRepoService {
 
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/" + userName + '?access_token=' + environment.apiKey).toPromise().then((response: any) => {
+      this.http.get<ApiResponse>("https://api.github.com/users/defunkt?access_token=").toPromise().then((response: any) => {
         this.user.name = response.name
         this.user.login = response.login
         this.user.avatar_url = response.avatar_url
@@ -60,7 +61,7 @@ export class UsersRepoService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/repos" + repoName + '?access_token=' + environment.apiKey).toPromise().then((response: any) => {
+      this.http.get<ApiResponse>('https://api.github.com/users/daneden?access_token=' + environment.apiKey + '/repos').toPromise().then((response: any) => {
         this.repository.name = response.name
         this.repository.html_url = response.html_url
         this.repository.description = response.description
