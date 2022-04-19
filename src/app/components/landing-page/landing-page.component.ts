@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { SearchUserService } from 'src/app/services/search-user.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  user!: User;
+  constructor(private searchUserService: SearchUserService) { 
+   
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.searchUserService.userRequest();
+    this.user = this.searchUserService.user;
   }
 
 }

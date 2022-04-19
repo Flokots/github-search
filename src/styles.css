@@ -2,7 +2,5 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 
 body {
-  background-color: #5C2751;
   margin: 2em;
-  color: white;
 }

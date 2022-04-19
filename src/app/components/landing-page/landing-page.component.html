@@ -3,24 +3,20 @@
     <h1>My Github User Profile</h1>
     <hr>
   </div>
-  <div>
-    <a>
-      <p>login</p>
-    </a>
-    <div class="avatar"></div>
-  </div>
-  <div>
-    <div>
-      <p>html_url</p>
-      <p>followers</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="avatar"><img src="{{user.avatar_url}}"></div>
     </div>
-    <div>
-      <p>repos_url</p>
-      <div>
-        <p>repos</p>
-      </div>
+    <div class="col-md-6">
+      <p>Flokots</p>
+      <p>Created on: {{user.created_at | date}}</p>
+      <p>Last updated on : {{user.updated_at | date}}</p>
+      <p>Followers: {{user.followers}}</p>
+      <p><a href="{{user.html_url}}" target="_blank">Github User Profile</a></p>
+      <p>Repositories: {{user.public_repos}}</p>
     </div>
   </div>
-
-
+  <div class="lp_button">
+    <button class="btn btn-primary">Search Users and repos</button>
+  </div>
 </div>
