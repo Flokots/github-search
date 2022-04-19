@@ -1,10 +1,13 @@
 <div class="container">
-  <form>
+  <form #goalForm="ngForm">
     <h1>Usernames and Repos</h1>
-    <div class="mb-3">
+    <div class=" form-group mb-3">
       <label for="username" class="form-label">User Name Or Repository</label>
-      <input type="text" class="form-control" id="username" aria-describedby="username">
+      <input type="text" class="form-control" id="username" [(ngModel)] ="userName" #username="ngModel" name="username" aria-describedby="username" required>
       <div id="username" class="form-text">Enter The Github Username or Repository name.</div>
+      <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+        <p>Username or repository name is required</p>
+      </div>
     </div>
     <button type="submit" class="btn btn-primary text-uppercase">Search</button>
   </form>
