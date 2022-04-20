@@ -19,6 +19,7 @@ export class DisplayUserRepoComponent implements OnInit {
 
   constructor(searchUserService: SearchUserService) {
     this.searchUserService = searchUserService;
+    this.reposDetails = [];
 
   }
   newSearchName(searchName: string) {
@@ -26,6 +27,7 @@ export class DisplayUserRepoComponent implements OnInit {
     this.searchUserService.reposRequest(searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
+    
 
   }
 
@@ -34,9 +36,7 @@ export class DisplayUserRepoComponent implements OnInit {
     this.searchUserService.reposRequest(this.searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
-    
-
   }
-
+ 
 }
 

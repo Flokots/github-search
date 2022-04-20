@@ -11,6 +11,7 @@ export class SearchUserService {
 
   user!: User;
   reposArray!: Repository[];
+  searchName: string = '';
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");

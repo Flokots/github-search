@@ -11,12 +11,17 @@
     </div>
     {{searchName}}
     <div class="search-button row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <div class="row each-button">
           <button class="btn btn-primary">Search</button>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-4">
+        <div class="row each-button">
+          <button (click)="reloadCurrentPage()" class="btn btn-warning">Clear Form</button>
+        </div>
+      </div>
+      <div class="col-sm-4">
         <div class="row each-button">
           <button class="btn btn-danger" (click)="goToUrl()">Back</button>
         </div>

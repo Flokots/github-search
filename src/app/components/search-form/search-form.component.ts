@@ -17,6 +17,9 @@ export class SearchFormComponent implements OnInit {
     this.newSearch.emit(this.searchName)
   }
 
+  reloadCurrentPage() {
+    window.location.reload();
+  }
   goToUrl() {
     this.router.navigate(["/landing-page"])
   }

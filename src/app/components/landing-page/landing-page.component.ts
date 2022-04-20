@@ -13,6 +13,7 @@ export class LandingPageComponent implements OnInit {
 
   goToUrl() {
     this.router.navigate(["/display-user-repo"])
+
   }
   user!: User;
   reposDetails!: Repository[]; 

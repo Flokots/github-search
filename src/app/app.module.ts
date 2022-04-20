@@ -20,7 +20,7 @@ import { DateCountPipe } from './pipes/date-count.pipe';
     NotFoundComponent,
     DisplayUserRepoComponent,
     CloneHighlightDirective,
-    DateCountPipe
+    DateCountPipe,
   ],
   imports: [
     BrowserModule,
