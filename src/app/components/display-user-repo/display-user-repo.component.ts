@@ -12,15 +12,23 @@ import { SearchUserService } from 'src/app/services/search-user.service';
 export class DisplayUserRepoComponent implements OnInit {
 
   user!: User;
-  reposDetails!: Repository[]; 
+  reposDetails!: Repository[];
   repository!: Repository;
   searchUserService!: SearchUserService;
   searchName!: string;
 
   constructor(searchUserService: SearchUserService) {
     this.searchUserService = searchUserService;
-    
-   }
+
+  }
+  newSearchName(searchName: string) {
+    this.searchName = searchName;
+    this.searchUserService.userRequest(this.searchName)
+    this.searchUserService.reposRequest(this.searchName)
+    this.user = this.searchUserService.user;
+    this.reposDetails = this.searchUserService.reposArray;
+
+  }
 
   ngOnInit() {
     this.searchUserService.userRequest(this.searchName);
@@ -32,7 +40,7 @@ export class DisplayUserRepoComponent implements OnInit {
 
     console.log(this.reposDetails)
     console.log("above are repo details")
-    
+
   }
 
 }

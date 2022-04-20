@@ -1,5 +1,5 @@
 <div class="container">
-  <app-search-form></app-search-form>
+  <app-search-form (newSearch)="newSearchName($event)"></app-search-form>
   <div class="row">
     <div class="col-md-6">
       <div class="avatar"><img src="{{user.avatar_url}}"></div>
