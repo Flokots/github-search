@@ -22,8 +22,8 @@ export class DisplayUserRepoComponent implements OnInit {
 
   }
   newSearchName(searchName: string) {
-    this.searchUserService.userRequest(searchName)
-    this.searchUserService.reposRequest(searchName)
+    this.searchUserService.userRequest(searchName);
+    this.searchUserService.reposRequest(searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
 
@@ -34,11 +34,7 @@ export class DisplayUserRepoComponent implements OnInit {
     this.searchUserService.reposRequest(this.searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
-    console.log(this.user)
-    console.log("above are user details")
-
-    console.log(this.reposDetails)
-    console.log("above are repo details")
+    
 
   }
 
