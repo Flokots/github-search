@@ -1,0 +1,16 @@
+.repo {
+  background-color: #062726;
+  color: #E2CFEA;
+  padding: 2em;
+  margin: 1em;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.repo-details {
+  margin-right: auto;
+  margin-left: auto;
+  width: 16em;
+  margin-top: 2em;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
