@@ -3,15 +3,24 @@
     <h3 class="text-center">Search Form</h3>
     <div class="form-group">
       <label for="searchname">User or repository</label>
-      <input type="text" class="form-control" id="searchname"
-      [(ngModel)]="searchName" name="searchname" #searchname="ngModel" required>
+      <input type="text" class="form-control" id="searchname" [(ngModel)]="searchName" name="searchname"
+        #searchname="ngModel" required>
       <div [hidden]="searchname.valid || searchname.pristine" class="alert alert-danger">
         <p>User or Repository is required</p>
       </div>
     </div>
     {{searchName}}
-    <div class="search-button">
-      <button class="btn btn-primary">Search</button>
+    <div class="search-button row">
+      <div class="col-sm-6">
+        <div class="row each-button">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row each-button">
+          <button class="btn btn-danger" (click)="goToUrl()">Back</button>
+        </div>
+      </div>
     </div>
   </form>
 </div>

@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search-form',
@@ -15,7 +17,11 @@ export class SearchFormComponent implements OnInit {
     this.newSearch.emit(this.searchName)
   }
 
-  constructor() { }
+  goToUrl() {
+    this.router.navigate(["/landing-page"])
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
