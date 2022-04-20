@@ -1,5 +1,4 @@
 form {
-  background-color: #5C2751;
   color: #76E5FC;
   padding: 2em;
   margin: 2em;
@@ -12,4 +11,8 @@ h1 {
   text-align: center;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-variant: small-caps;
+}
+.search-button {
+  margin-top: 1em;
+  text-align: center;
 }
