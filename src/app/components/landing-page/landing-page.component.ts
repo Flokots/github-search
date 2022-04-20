@@ -12,7 +12,7 @@ import { SearchUserService } from 'src/app/services/search-user.service';
 export class LandingPageComponent implements OnInit {
 
   goToUrl() {
-    this.router.navigate(["/search-form"])
+    this.router.navigate(["/display-user-repo"])
   }
   user!: User;
   reposDetails!: Repository[]; 
@@ -30,6 +30,12 @@ export class LandingPageComponent implements OnInit {
     this.searchUserService.reposRequest(this.searchName);
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
+    console.log(this.user)
+    console.log("above are user details")
+
+    console.log(this.reposDetails)
+    console.log("above are repo details")
+    
   }
 
 }
