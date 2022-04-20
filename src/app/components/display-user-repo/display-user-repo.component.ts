@@ -22,9 +22,8 @@ export class DisplayUserRepoComponent implements OnInit {
 
   }
   newSearchName(searchName: string) {
-    this.searchName = searchName;
-    this.searchUserService.userRequest(this.searchName)
-    this.searchUserService.reposRequest(this.searchName)
+    this.searchUserService.userRequest(searchName)
+    this.searchUserService.reposRequest(searchName)
     this.user = this.searchUserService.user;
     this.reposDetails = this.searchUserService.reposArray;
 
