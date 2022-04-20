@@ -1,5 +1,5 @@
 <div class="container">
-  <form #searchForm="ngForm">
+  <form (ngSubmit)="submitSearchName()" #searchForm="ngForm">
     <h3 class="text-center">Search Form</h3>
     <div class="form-group">
       <label for="searchname">User or repository</label>
