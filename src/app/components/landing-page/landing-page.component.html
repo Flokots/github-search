@@ -24,7 +24,7 @@
         <div class="repo" *ngFor="let reposDetail of reposDetails; let i = index">
           <p class="text-center"><b>{{reposDetail.name}}</b></p>
           <p>Description: {{reposDetail.description}}</p>
-          <p>Clone Url: {{reposDetail.clone_url}}</p>
+          <p appCloneHighlight>Clone Url: {{reposDetail.clone_url}}</p>
           <p>Forks: {{reposDetail.forks_count}}</p>
           <p>Created On: {{reposDetail.created_at | date}}, {{reposDetail.created_at | dateCount}} days ago</p>
           <p>Last Updated On: {{reposDetail.updated_at | date}}, {{reposDetail.updated_at | dateCount}} days ago</p>
