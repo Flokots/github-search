@@ -9,6 +9,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DisplayUserRepoComponent } from './components/display-user-repo/display-user-repo.component';
+import { CloneHighlightDirective } from './directives/clone-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DisplayUserRepoComponent } from './components/display-user-repo/display
     LandingPageComponent,
     SearchFormComponent,
     NotFoundComponent,
-    DisplayUserRepoComponent
+    DisplayUserRepoComponent,
+    CloneHighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,11 @@ import { User } from '../models/user';
 export class SearchUserService {
 
   user!: User;
-  reposArray: Repository[] = [];
+  reposArray!: Repository[];
 
   constructor(private http: HttpClient) {
     this.user = new User("", "", "", 0, new Date(), new Date(), 0, "");
     this.reposArray = [];
-
-
   }
 
   userRequest(searchName: string) {
@@ -32,7 +30,8 @@ export class SearchUserService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>("https://api.github.com/users/" + searchName + "?access_token" + environment.apiKey).toPromise().then((response: any) => {
+      // "Flokots:" + environment.apiKey + 
+      this.http.get<ApiResponse>("https://api.github.com/users/" + searchName).toPromise().then((response: any) => {
         this.user.name = response.name
         this.user.login = response.login
         this.user.avatar_url = response.avatar_url
@@ -51,16 +50,20 @@ export class SearchUserService {
   }
 
   reposRequest(searchName: string) {
-    this.http.get<any>("https://api.github.com/users/" + searchName + "/repos?access_token" + environment.apiKey)
-      .subscribe(
-        (data: []) => {
-          let responseArray = data;
-          responseArray.forEach((e: any) => {
-            this.reposArray.push(new Repository(e.name, e.html_url, e.description, e.created_at, e.updated_at, e.forks_count, e.clone_url))
-
-          })
-        }
-      )
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<any>("https://api.github.com/users/" + searchName + "/repos?access_token" + environment.apiKey)
+      .toPromise().then((response: []) => {
+        let responseArray = response;
+        responseArray.forEach((e: any) => {
+          this.reposArray.push(new Repository(e.name, e.html_url, e.description, e.created_at, e.updated_at, e.forks_count, e.clone_url))
+          
+          resolve(response)
+        }, (error: any) => {
+          reject(error)
+        })
+      })
+    })
+    return promise;
   }
 }
 
