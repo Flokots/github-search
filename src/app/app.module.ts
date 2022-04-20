@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DisplayUserRepoComponent } from './components/display-user-repo/display-user-repo.component';
 import { CloneHighlightDirective } from './directives/clone-highlight.directive';
+import { DateCountPipe } from './pipes/date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CloneHighlightDirective } from './directives/clone-highlight.directive'
     SearchFormComponent,
     NotFoundComponent,
     DisplayUserRepoComponent,
-    CloneHighlightDirective
+    CloneHighlightDirective,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
