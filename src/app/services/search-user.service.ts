@@ -52,7 +52,7 @@ export class SearchUserService {
 
   reposRequest(searchName: string) {
     let promise = new Promise((resolve, reject) => {
-      this.http.get<any>("https://api.github.com/users/" + searchName + "/repos?access_token" + environment.apiKey)
+      this.http.get<any>("https://api.github.com/users/" + searchName + "/repos")
       .toPromise().then((response: []) => {
         let responseArray = response;
         responseArray.forEach((e: any) => {
